@@ -32,6 +32,7 @@ jobs:
         run: echo "test-code"
     needs: [build,code]
   deploy:
+    if: inputs.environment == 'prod'
     runs-on: ubuntu-latest
     steps:
       - name: deploy-code

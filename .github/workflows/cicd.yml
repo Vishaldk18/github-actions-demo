@@ -7,19 +7,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pull code
-        run: echo "pull code from github" 
+        run: echo "pull code from github"
   build:
     runs-on: ubuntu-latest
     steps:
       - name: build code
         run: echo "building code"
+    needs: code 
+ 
   test:
     runs-on: ubuntu-latest
     steps:
       - name: test-code
         run: echo "test-code"
+    needs: [build,code]
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: deploy-code
         run: echo "deploy-code"
+    needs: [code,build,test]

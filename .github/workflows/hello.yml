@@ -1,0 +1,17 @@
+# this is workflows name
+name: hello
+# when to trigger workflow
+on:
+  push:
+    branches: [main]
+jobs:
+#name of job
+  greet:
+  # every job needs a runner
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello to users
+        run: echo "Hello Dosto"
+      - name: print username
+        run: echo "$USER"
+  

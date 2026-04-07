@@ -1,6 +1,16 @@
 name: cicd-pipeline
 on:
  workflow_dispatch:
+   inputs:
+     environment:
+       type: choice
+       description: option to choose enviorment while running workflow
+       required: true
+       default: test
+       options:
+         - dev
+         - test
+         - prod
    
 jobs:
   code:

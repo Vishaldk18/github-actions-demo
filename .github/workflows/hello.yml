@@ -2,8 +2,9 @@
 name: hello
 # when to trigger workflow
 on:
-  push:
-    branches: [main]
+  workflow_dispatch: 
+ # push:
+  #  branches: [main]
 jobs:
 #name of job
   greet:

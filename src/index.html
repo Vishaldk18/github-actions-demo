@@ -1,1 +1,148 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishal | DevOps Engineer</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: #020617;
+      color: #e2e8f0;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    a { color: #22c55e; text-decoration: none; margin: 0 10px; }
+
+    section { padding: 100px 20px; }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .typing {
+      font-size: 2rem;
+      color: #22c55e;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background: #22c55e;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #22c55e;
+    }
+
+    footer { text-align: center; padding: 20px; color: gray; }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div>Vishal.dev</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="typing" id="typing"></div><span class="cursor"></span>
+  <p>AWS | Docker | Kubernetes | Terraform</p>
+</section>
+
+<section id="about">
+  <div class="glass">
+    <p>$ DevOps Engineer skilled in cloud automation, CI/CD, and scalable systems.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="glass card">AWS</div>
+    <div class="glass card">Docker</div>
+    <div class="glass card">Kubernetes</div>
+    <div class="glass card">Terraform</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="glass card">
+      <h3>CI/CD Pipeline</h3>
+      <p>GitHub Actions + AWS</p>
+    </div>
+    <div class="glass card">
+      <h3>Kubernetes App</h3>
+      <p>Microservices deployment</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="glass">
+    <p>> Email: vishal@email.com</p>
+    <p>> GitHub: github.com/vishal</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Vishal
+</footer>
+
+<script>
+  const text = "> Hi, I'm Vishal | DevOps Engineer";
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+
+  type();
+</script>
+
+</body>
+</html>

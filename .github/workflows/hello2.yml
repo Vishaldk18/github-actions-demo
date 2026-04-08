@@ -15,6 +15,6 @@ jobs:
       - name: Print the name of the branch that triggered the run
         run: echo ${{ github.ref_name }}
       - name: List the files in the repo
-        run: ls -la
+        run: l -la
       - name: Print the runner's operating system
         run: uname -s

@@ -13,8 +13,8 @@ jobs:
       - name: Print the current date and time
         run: date
       - name: Print the name of the branch that triggered the run
-        run: echo ${{ github.ref_name }}i
+        run: echo ${{ github.ref_name }}
       - name: List the files in the repo
-        run: ls
+        run: ls -la
       - name: Print the runner's operating system
         run: uname -s

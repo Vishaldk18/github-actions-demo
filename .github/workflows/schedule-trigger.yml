@@ -1,7 +1,7 @@
 name: schedule-trigger
 on:
   schedule:
-    cron: 20 19 * * *
+    cron: '24 19 * * *'
 jobs:
   schedule-job:
    runs-on: ubuntu-latest

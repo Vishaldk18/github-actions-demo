@@ -1,0 +1,11 @@
+name: schedule-trigger
+on:
+  schedule:
+    cron: 20 19 * * *
+jobs:
+  schedule-job:
+   runs-on: ubuntu-latest
+   steps:
+     - name: print date
+       run: date
+

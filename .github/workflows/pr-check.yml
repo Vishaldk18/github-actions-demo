@@ -1,0 +1,11 @@
+name: trigger-demo
+on:
+  pull_request:
+    branches: [main]
+    types: [opened,synchronize]
+jobs:
+  pr-check:
+   runs-on: ubuntu-latest
+   steps:
+     - name: PR check running for branch: ${{ github.ref_name }}
+       run: echo "${{ github.ref_name }}"

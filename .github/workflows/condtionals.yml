@@ -18,7 +18,7 @@ jobs:
         run: echo "previous step failed"
       
       - name: Step with continue-on-error
-        continue-one-error: true
+        continue-on-error: true
         run: |
           echo "This step will fail but workflow continues"
           exit 1

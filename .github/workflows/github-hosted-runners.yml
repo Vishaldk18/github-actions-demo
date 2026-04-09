@@ -22,8 +22,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: print os info
-        shell: bash
+        # shell: bash
+        shell: powershell
         run: |
-          echo "OS name:$(uname -s)"
-          echo "Hostname: $(hostname)"
-          echo "Username: $USER"
+          #echo "OS name:$(uname -s)"
+          #echo "Hostname: $(hostname)"
+          #echo "Username: $USER"
+          Write-Output "OS name: $env:OS"
+          Write-Output "Hostname: $env:COMPUTERNAME"
+          Write-Output "Username: $env:USERNAME"

@@ -1,6 +1,6 @@
 name: output-example
 on: 
- workflow-dispatch:
+ workflow_dispatch:
 jobs:
   generate-date:
     runs-on: ubuntu-latest

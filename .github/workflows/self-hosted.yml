@@ -5,7 +5,7 @@ on:
 
 jobs:
   self-demo:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, vishals-ec2-instance]
 
     steps:
       - uses: actions/checkout@v4

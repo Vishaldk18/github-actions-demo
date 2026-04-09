@@ -1,0 +1,27 @@
+name: smart-workflow
+on:
+  push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint step
+        run: echo "linting the code"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test step
+        run: echo "testing the code"
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name:
+        needs: [lint, test]
+        run: |
+          if [ ${{ github.ref_name }} == 'main' ]
+          then
+               echo "this is main branch"
+          else 
+               echo "this is feature branch"
+      - name: Print commit message
+        run: echo "Commit message: ${{ github.event.head_commit.message }}"

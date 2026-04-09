@@ -1,0 +1,23 @@
+name: env-check
+on:
+  workflow_dispatch
+# workflow level environment variable
+env:
+  APP_NAME: myapp
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    # job level env variable 
+    env:
+      ENVIRONMENT: staging
+    steps:
+      # step level env variale
+      env:
+        VERSION: 1.0.0
+      - name: print all env varibales and github context
+        run: |
+          echo "App Name: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
+          echo "Version: $VERSION"
+          echo "Github commit SHA: ${{ github.sha }}"
+          echo "Github Actor: ${{ github.actor }}"

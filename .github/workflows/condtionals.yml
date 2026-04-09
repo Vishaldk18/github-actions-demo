@@ -30,7 +30,7 @@ jobs:
     if: ${{ github.event_name == 'push'}}
     steps:
       - name: A job that only runs on push events, not on pull requests
-      run: echo "job is running as push event happened"
+        run: echo "job is running as push event happened"
                                                                                  
 
 

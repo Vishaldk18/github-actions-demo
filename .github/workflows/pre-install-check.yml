@@ -2,11 +2,10 @@ name: pre-check
 on:
   workflow_dispatch:
 jobs:
-  ubuntu:
+  check-version:
     runs-on: ubuntu-latest
     steps:
-      version-print:
-        - name: versions
+        - name: version_print
           run: |
             docker --version
             git --version

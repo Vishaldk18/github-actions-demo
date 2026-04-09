@@ -12,8 +12,8 @@ on:
           - production
 jobs:
   input-name:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps: 
       - name: print input name
-        run: echo "${{ workflow_dispatch.inputs.environment }}"
+        run: echo "${{ inputs.environment }}"
 

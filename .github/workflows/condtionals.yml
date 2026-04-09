@@ -10,8 +10,8 @@ jobs:
         if: ${{ github.ref_name == 'main' }}
         run: echo "running on main branch"
 
-      - name: demo fail step
-        run: exit 1
+    #  - name: demo fail step
+    #    run: exit 1
 
       - name: A step that only runs when the previous step failed
         if: ${{ failure() }}

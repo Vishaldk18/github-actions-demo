@@ -1,0 +1,19 @@
+name: manual-trigger
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: choose the environment in which to trigger workflow
+        required: true
+        default: staging
+        type: choice
+        options:
+          - staging
+          - production
+jobs:
+  input-name:
+    runs-on: ubuntu-lates
+    steps: 
+      - name: print input name
+        run: echo "${{ workflow_dispatch.inputs.environment }}"
+

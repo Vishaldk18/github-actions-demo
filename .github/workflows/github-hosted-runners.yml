@@ -1,0 +1,29 @@
+name: github-hosted-demo
+on:
+  workflow_dispatch:
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print os info
+        run: |
+          echo "OS name:$(uname -s)"
+          echo "Hostname: $(hostname)"
+          echo "Username: $USER"
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: print os info
+        run: |
+          echo "OS name:$(uname -s)"
+          echo "Hostname: $(hostname)"
+          echo "Username: $USER"
+  mac:
+    runs-on: macos-latest
+    steps:
+      - name: print os info
+        shell: bash
+        run: |
+          echo "OS name:$(uname -s)"
+          echo "Hostname: $(hostname)"
+          echo "Username: $USER"

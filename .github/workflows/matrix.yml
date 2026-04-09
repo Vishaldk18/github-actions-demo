@@ -17,5 +17,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: verify version
-        run: python --version
+        run: exit 1
 

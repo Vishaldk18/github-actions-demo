@@ -23,5 +23,6 @@ jobs:
                echo "this is main branch"
           else 
                echo "this is feature branch"
+          fi
       - name: Print commit message
         run: echo "Commit message: ${{ github.event.head_commit.message }}"

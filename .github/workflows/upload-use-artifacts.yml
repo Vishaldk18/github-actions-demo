@@ -1,0 +1,31 @@
+name: use-artifact-demo
+on:
+  workflow_dispatch
+jobs:
+  generate-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate log report
+        run: |
+          echo "log-report-$(date)" > new_log.txt
+          echo "log generated successfully" >> new_log.txt
+      - name: verify file
+        run: ls -la
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: new-log-report
+          path: new_log.txt
+
+  use-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: new-log-report
+      - name: show report content
+        run: |
+          echo "file content:"
+          cat new_log.txt 
+

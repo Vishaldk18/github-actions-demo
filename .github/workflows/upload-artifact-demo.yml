@@ -1,0 +1,19 @@
+name: upload-artifact-demo
+on:
+  workflow_dispatch
+jobs:
+  generate-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate report
+        run: |
+          echo "Log-Report-$(date)" > log.txt
+          echo "Log Generated Successfully." >> log.txt
+      - name: verify generation
+        run: ls -la
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: log.txt 

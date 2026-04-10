@@ -1,0 +1,13 @@
+name: script-demo
+on:
+  workflow_dispatch
+jobs:
+  script-demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: make script executable 
+        run: chmod +x script.sh
+      - name: execute the script
+        run: ./script.sh

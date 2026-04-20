@@ -18,7 +18,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: checkout code
-      uses: actions/checkoutcode@v4
+      uses: actions/checkout@v4
  print:
   runs-on: ubuntu-latest
   steps:

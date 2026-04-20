@@ -1,0 +1,29 @@
+name: demo-composite-action
+description: action that greets and prints date
+inputs:
+  name:
+   required: true
+  language:
+   required: true
+   default: en
+outputs:
+ greeted:
+  value: ${{ steps.set-output.outputs.greeted }}
+  
+runs:
+  using: composite
+  steps:
+   - name: greet
+     run: echo "Helloo ${{ inputs.name }}"
+     shell: bash
+   - name: print date and os
+     run: |
+      echo "Date: $(date) & OS: $RUNNER_OS"
+     shell: bash
+   - name: set output
+     id: set-output
+     run: echo "reeted=true" >> $GITHUB_OUTPUT
+     shell: bash
+      
+  
+   

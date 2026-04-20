@@ -9,11 +9,25 @@ on:
      type: string
      required: true
      default: staging
+  outputs:
+    build_version:
+     value: jobs.build.outputs.build_version
   secrets:
     docker_token:
      required: true
    
 jobs:
+ get-build-version:
+  runs-on: ubuntu-latest
+  outputs:
+    build_version: ${{ steps.version.outputs.version }}
+  steps:
+   - name: get build version
+     id: version
+     run: |
+          SHORT_SHA=$(echo "${GITHUB_SHA}" | cut -c1-7)
+          echo "version=v1.0-${SHORT_SHA}" >> $GITHUB_OUTPUT
+
  code:
   runs-on: ubuntu-latest
   steps:

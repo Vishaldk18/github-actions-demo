@@ -3,9 +3,9 @@ name: Scheduled Tasks
 on:
   schedule:
     # Every Monday at 02:30 AM UTC
-    - cron: '30 2 * * 1'
+   # - cron: '30 2 * * 1'
     # Every 6 hours
-    - cron: '0 */6 * * *'
+  #  - cron: '0 */6 * * *'
 
 jobs:
   scheduled-job:

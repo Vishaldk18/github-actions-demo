@@ -1,3 +1,5 @@
+Task 1: Pull Request Event Types
+
 name: pr-life-cycle-demo
 on:
  pull_request: 
@@ -29,3 +31,4 @@ jobs:
         github.event.pull_request.merged == true     
       run: |
           echo "✅ Pull request was merged successfully!"
+
